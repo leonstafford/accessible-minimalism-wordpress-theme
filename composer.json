@@ -1,0 +1,67 @@
+{
+    "name": "leonstafford/accessible-minimalism-wordpress-theme",
+    "description": "Minimalist WordPress theme with a penchant for accessibility.",
+    "homepage": "https://github.com/leonstafford/accessible-minimalism-wordpress-theme",
+    "license": "UNLICENSE",
+    "authors": [
+        {
+            "name": "Leon Stafford",
+            "email": "me@ljs.dev",
+            "homepage": "https://ljs.dev"
+        }
+    ],
+    "type": "wordpress-theme",
+    "support": {
+        "issues": "https://github.com/leonstafford/accessible-minimalism-wordpress-theme/issues",
+        "forum": "https://github.com/leonstafford/accessible-minimalism-wordpress-theme/discussion",
+        "docs": "https://github.com/leonstafford/accessible-minimalism-wordpress-theme",
+        "source": "https://github.com/leonstafford/accessible-minimalism-wordpress-theme"
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "10up/wp_mock": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "infection/infection": "*",
+        "mikey179/vfsstream": "*",
+        "mockery/mockery": "*",
+        "pestphp/pest": "*",
+        "php-parallel-lint/php-parallel-lint": "*",
+        "phpcompatibility/php-compatibility": "*",
+        "phpstan/phpstan-strict-rules": "*",
+        "phpunit/phpunit": "*",
+        "squizlabs/php_codesniffer": "dev-master",
+        "szepeviktor/phpstan-wordpress": "*",
+        "szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset": "*",
+        "vimeo/psalm": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "AccessibleMinimalism\\": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "classmap-authoritative": true
+    },
+    "scripts": {
+      "phpstan": "php -d memory_limit=-1 ./vendor/bin/phpstan --configuration=conf/phpstan.neon analyse",
+      "phpcbf": "vendor/bin/phpcbf --standard=conf/phpcs.xml .",
+      "phpcs":  "vendor/bin/phpcs -s --standard=conf/phpcs.xml .",
+      "pest": "vendor/bin/pest -c conf/phpunit.xml",
+      "coverage": "vendor/bin/pest --coverage",
+      "lint": "vendor/bin/parallel-lint --exclude vendor .",
+      "test": [
+          "composer validate --strict",
+          "@lint",
+          "@phpcs",
+          "@phpstan",
+          "@pest",
+          "@coverage"
+      ],
+      "build": "/bin/sh tools/build_release.sh"
+    }
+}
