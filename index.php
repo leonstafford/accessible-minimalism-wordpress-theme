@@ -13,17 +13,18 @@ if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
 
-        <h2><?php the_title(); ?></h2>
+        echo "<h2>" . the_title() . "</h2>";
  
-        <?php the_content(); ?>
+        the_content();
     }
 
 
 } else {
 
-        <h2>No content found</h2>
+        echo "<h2>No content found</h2>";
  
-        <p>Put something here</p>
+        echo "<p>Put something here</p>";
+        
 
 }
 
