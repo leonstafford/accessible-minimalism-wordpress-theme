@@ -33,10 +33,8 @@ rm -Rf "$EXEC_DIR/vendor/*"
 composer install --quiet --no-dev --optimize-autoloader
 
 # cp all required sources to build dir
-cp -r "$EXEC_DIR"/src "$TMP_DIR"/accessible-minimalism-wordpress-theme/
-cp -r "$EXEC_DIR"/vendor "$TMP_DIR"/accessible-minimalism-wordpress-theme/
-cp -r "$EXEC_DIR"/views "$TMP_DIR"/accessible-minimalism-wordpress-theme/
 cp -r "$EXEC_DIR"/*.php "$TMP_DIR"/accessible-minimalism-wordpress-theme/
+cp -r "$EXEC_DIR"/style.css "$TMP_DIR"/accessible-minimalism-wordpress-theme/
 
 cd "$TMP_DIR" || exit
 
