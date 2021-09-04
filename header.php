@@ -43,6 +43,6 @@
 	<?php wp_head(); ?>
 </head>
 <body>
-
+<p><a href="#nav-menu">Menu</a></p>
 <?php wp_body_open(); ?>
 
