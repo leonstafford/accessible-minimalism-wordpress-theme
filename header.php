@@ -44,5 +44,6 @@
 </head>
 <body>
 <p><a href="#nav-menu">Menu</a></p>
+<h1><?php echo get_bloginfo( 'name' ); ?></h1>
 <?php wp_body_open(); ?>
 

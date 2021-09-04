@@ -9,7 +9,8 @@ get_header();
 
 $category = get_queried_object();
 
-echo get_cat_name( $category->term_id );
+
+echo '<h2>' . get_cat_name( $category->term_id ) . '</h2>';
 
 if ( have_posts() ) {
 ?>
