@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
   <link rel="alternate" type="application/rss+xml" href="https://ljs.dev/index.xml" title="Leon Stafford" />
-  <title>Leon Stafford</title>
+  <title><?php echo wp_title(''); ?></title>
   <style type="text/css">
   /*<![CDATA[*/
   html {
