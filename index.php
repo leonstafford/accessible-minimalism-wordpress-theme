@@ -13,7 +13,7 @@ if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
 
-        if (  ! is_home() || ! is_front_page() ) ) {
+        if (  ! is_home() || ! is_front_page() ) {
           the_title('<h2>', '</h2>');
         }
  
