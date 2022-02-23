@@ -13,7 +13,9 @@ if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
 
-        if (  ! is_home() || ! is_front_page() ) {
+        if ( is_home() || is_front_page() ) {
+            // don't render h2
+        } else {
           the_title('<h2>', '</h2>');
         }
  
