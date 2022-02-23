@@ -13,7 +13,9 @@ if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
 
-        the_title('<h2>', '</h2>');
+        if (  ! is_home() || ! is_front_page() ) ) {
+          the_title('<h2>', '</h2>');
+        }
  
         the_content();
     }
